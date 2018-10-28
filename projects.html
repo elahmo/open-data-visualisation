@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>US Governmental Spending</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Raleway:900|Montserrat:700" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/minified.css" />
+		<script>document.documentElement.className = 'js';</script>
+	</head>
+	<body class="demo-3 loading">
+		<main>
+			<div class="overlay overlay10"></div>
+			<section class="content">
+				<header class="codrops-header">
+					<h1 class="codrops-header__title">US Governmental Spending</h1>
+					<nav class="demos">
+						<a class="demo" href="index.html">Home</a>
+						<a class="demo" href="spendings.html">Spendings</a>
+						<a class="demo demo--current" href="projects.html">Projects</a>
+					</nav>
+				</header>
+				<div class="main">
+				<div class="mainProjects">
+					<p>This is a multidimensional data exploration that shows various 
+						views of the dataset, projects completion, timeline, departments,
+						individual project details and provides a complete insight
+					  about the dataset.</p>
+						<hr>
+						
+						<div class="pieCharts">
+							<h2>Schedule and Completion Status</h2>
+							<div id="statusPie" class='pieChartSingle'></div>
+							<div id="projectPie" class='pieChartSingle'></div>
+						</div>
+						<section id="sidebar-timeline">
+								<h2>Department</h2>
+								<div id="barDeptChart"></div>
+						</section>
+						<div class="projectTimeline">
+							<h2>Start of project</h2>
+							<div id="timeline"></div>
+						</div>
+						<div class="projectData">
+							<h2>Project details</h2>
+							<div id="paging">
+								Projects <span id="begin"></span>-<span id="end"></span> of <span id="size"></span>.
+								<input id="last" type="Button" value="Last" onclick="javascript:last()" style="color: black" />
+								<input id="next" type="button" value="Next" onclick="javascript:next()" style="color: black"/>
+							</div>
+							<table id="projectDataTable" class="table table-hover project-table"></table>
+						</div>
+						</div>
+				</div>
+				</div>
+			</section>
+		</main>
+		<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/anime.min.js"></script>
+		<script src="js/d3v3.js"></script>
+		<script src="js/crossfilter.js"></script>
+		<script src="js/dc.js"></script>
+		<script src="js/vis.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script>
+		(function() {
+
+
+			// Fake loading time..
+			var startTime = new Date().getTime();
+			imagesLoaded(document.querySelector('main'), function() {
+				var elapsed = new Date().getTime() - startTime,
+					initFn = function() {
+						document.body.classList.remove('loading');
+						// setTimeout(init, 50);
+					};
+				if( elapsed > 1000) {
+					initFn();
+				}
+				else {
+					setTimeout(initFn, 500);
+				}
+			});
+
+		})();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>US Governmental Spending</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Raleway:900|Montserrat:700" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/minified.css" />
+		<script>document.documentElement.className = 'js';</script>
+	</head>
+	<body class="demo-3 loading">
+		<main>
+			<div class="overlay overlay10"></div>
+			<section class="content">
+				<header class="codrops-header">
+					<h1 class="codrops-header__title">US Governmental Spending</h1>
+					<nav class="demos">
+						<a class="demo" href="index.html">Home</a>
+						<a class="demo demo--current" href="spendings.html">Spendings</a>
+						<a class="demo" href="projects.html">Projects</a>
+					</nav>
+				</header>
+				<div class="main">
+					<p>US Government spends a lot of money, and to illustrate how much
+						each department gets, a bubble chart is a nice representation
+						of data, that shows how large are items relative to each other.
+						You can change between the count of projects, and the total
+							value of money spent on project spent per department.</p>
+							<button class='btn-change btn-change-active' data-selector='money'>Money spent</button><button data-selector='count' class='btn-change'>Count of projects</button>
+							<hr>
+						<svg id='bubblechart' width="600" height="600" font-family="sans-serif" font-size="10" text-anchor="middle"></svg>
+						<hr>
+						<svg id='steam' width="600" height="600" font-family="sans-serif" font-size="10" text-anchor="middle"></svg>
+						</div>
+				</div>
+			</section>
+		</main>
+		<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/anime.min.js"></script>
+		<script src="js/d3.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bubblechart.js"></script>
+		<script>
+		(function() {
+
+
+			// Fake loading time..
+			var startTime = new Date().getTime();
+			imagesLoaded(document.querySelector('main'), function() {
+				var elapsed = new Date().getTime() - startTime,
+					initFn = function() {
+						document.body.classList.remove('loading');
+						// setTimeout(init, 50);
+					};
+				if( elapsed > 1000) {
+					initFn();
+				}
+				else {
+					setTimeout(initFn, 500);
+				}
+			});
+
+		})();
+		</script>
+	</body>
+</html>
