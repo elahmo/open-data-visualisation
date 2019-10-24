@@ -13,8 +13,7 @@ Dataset was cleaned using OpenRefine open source tool. Following mistakes were f
 
 - unnecessary data at the beginning of the file
 - removal of 'total' rows, 26 of them
-- agency names have issues (clustering of whitespace,
-trailing etc), fixing typos (Agraculture/Agriculture, Transport/Transportation, SSA/Social Security Administration)
+- agency names have issues (clustering of whitespace, trailing etc), fixing typos (Agraculture/Agriculture, Transport/Transportation, SSA/Social Security Administration)
 - shorthand versions were converted to full names: DOD, Department of Defense
 - empty columns were removed
 - budgets that were not numbers were removed
